@@ -1,0 +1,35 @@
+[33mcommit 5be03b140c133ec43017c0e0acb26a5dfc90a10d[m[33m ([m[1;36mHEAD -> [m[1;32mrps-ui[m[33m)[m
+Author: Bill-Bo-Baggins-Pop-OS <charlesvill@g.ucla.edu>
+Date:   Sat Mar 25 15:23:06 2023 -0700
+
+    added buttons for rps, div each for results and score, round now plays with button function call
+
+[33mcommit aa25cad392fd5bb1508e8953c635361d9eb32323[m[33m ([m[1;31morigin/rps-ui[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Bill-Bo-Baggins-Pop-OS <charlesvill@g.ucla.edu>
+Date:   Thu Feb 2 18:41:47 2023 -0800
+
+    added a game function that loops and passes through the score and determines a winner after the appropriate number of rounds
+
+[33mcommit e004343dd201f40d80437d471392043630c528b9[m
+Author: Charles-Desk-Xfce <charlesvill@g.ucla.edu>
+Date:   Mon Jan 30 22:03:03 2023 -0800
+
+    added function that plays a round of rock paper scissors that checks for a random input and input from user
+
+[33mcommit e0fa542b53d8969a87ceec8b9a90638889487899[m
+Author: Charles-Desk-Xfce <charlesvill@g.ucla.edu>
+Date:   Fri Jan 27 06:45:57 2023 -0800
+
+    created random number generator and started with computer choice script
+
+[33mcommit fc752dd292865bcb7beb22963b81d5e7c983319a[m
+Author: Charles-Desk-Xfce <charlesvill@g.ucla.edu>
+Date:   Thu Jan 26 21:28:18 2023 -0800
+
+    created index file as well as linked javascript file and included sample console log to test successful script link
+
+[33mcommit c188c3d97bdab4235385ad0c93989d6aa99366ad[m
+Author: charlesvill <113150178+charlesvill@users.noreply.github.com>
+Date:   Thu Jan 26 20:40:37 2023 -0800
+
+    Initial commit

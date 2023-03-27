@@ -1,3 +1,8 @@
+let userScore=0;
+let compScore=0;
+let rounds = 0; 
+let playing = false; 
+
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorBtn = document.querySelector('#scissors');
@@ -5,9 +10,13 @@ const resultsDiv = document.querySelector('#results');
 const cScoreDiv = document.querySelector('#c_score');
 const pScoreDiv = document.querySelector('#player_score');
 
-rockBtn.addEventListener('click', () => game("rock")); 
-paperBtn.addEventListener('click', () => game("paper"));
-scissorBtn.addEventListener('click', () => game("scissors"));
+cScoreDiv.textContent = `Computer: ${compScore}`; 
+pScoreDiv.textContent = `Player: ${userScore}`; 
+
+rockBtn.addEventListener("click", () => game("rock"));
+paperBtn.addEventListener("click", () => game("paper"));
+scissorBtn.addEventListener("click", () => game("scissors"));
+
 
 
 
@@ -43,27 +52,24 @@ return comChoice;
 //this function requires the passthrough of the computer choice and the input function variables
 function playRound(playerSelection, computerChoice){
 
-    console.log('the function is playing!');
+    
 const draw = 'it\'s a draw!';
 const playerWin = 'Player wins round';
 const compWin = 'Player loses round';
 const error = 'there was an error, try again';
 
-let playerScore= 0;
-let compScore = 0;
-
 
 
 //player selects rock
 if(playerSelection==='rock'&&computerChoice==='paper'){
-    compScore++;
+    
     return compWin;
 }
 else if(playerSelection==='rock'&&computerChoice==='rock'){
     return draw;
 }
 else if(playerSelection==='rock'&&computerChoice==='scissors'){
-    playerScore++;
+    
     return playerWin;
 }
 //player selects paper
@@ -71,20 +77,20 @@ else if(playerSelection==='paper'&&computerChoice==='paper'){
     return draw;
 }
 else if(playerSelection==='paper'&&computerChoice==='rock'){
-    playerScore++;
+    
     return playerWin;
 }
 else if(playerSelection==='paper'&&computerChoice==='scissors'){
-    compScore++;
+    
     return compWin;
 }
 //player selects scissors
 else if(playerSelection==='scissors'&&computerChoice==='paper'){
-    playerScore++;
+    
     return playerWin;
 }
 else if(playerSelection==='scissors'&&computerChoice==='rock'){
-    compScore++;
+    
     return compWin;
 }
 else if(playerSelection==='scissors'&&computerChoice==='scissors'){
@@ -100,38 +106,83 @@ else{
 
 function game(playerSelection)
 {
-    
-    let userScore=0;
-    let compScore=0;
-    let rounds;
+    console.log(playerSelection);
+
+   if (playing && rounds <= 5)
+   {
     const playerWin = 'Player wins round';
     const compWin = 'Player loses round';
     const draw = 'it\'s a draw!';
-
-    //play 5 rounds 
-    //This below is being refactored with the buttons instead
-
     
-        
-        //set i to round variable to pass outer scope and add one if it's on the last one
-        //this is because on round5 it will exit loop before assigning i as 5.
-        //if(i>=4){rounds=i+1;}
-        //else{rounds=i;}
-
-
-        //where i left off: the round is playing with the buttons but it does not update the score of the winner, but is displaying the results of the round.
-       
+    //resultsDiv.textContent = "Results: "
+    
+    
         var computerSelection = computerChoice(ranNum());
         var roundResults = playRound(playerSelection, computerSelection);
-        resultsDiv.textContent = `Results: ${roundResults}`;
-        cScoreDiv.textContent = `Computer Score: ${compScore}`;
-        pScoreDiv.textContent = ` Player Score: ${userScore}`;
 
-        //will need to add the variable function assignments to the loop so it actually updates the values. 
-    }          //evaluate winner and add points
-  
+        if(roundResults === playerWin ){
+            resultsDiv.textContent =  `${playerSelection} beats ${computerSelection} , you have won a round`;
+            userScore++;
+            rounds++; 
+            pScoreDiv.textContent = `Player: ${userScore}`;
+            if (userScore >= 3 ){
+                
+                endGame(); 
+                
+            }
+        }
+        else if(roundResults === compWin){
+            resultsDiv.textContent = `${computerSelection} beats ${playerSelection} , you have lost this round.`;
+            compScore++; 
+            rounds++; 
+            cScoreDiv.textContent = `Computer: ${compScore}`;
+                if(compScore >=3 ){
+                //endgame function where computer wins
+                
+                endGame(); 
 
+               }
+            
+             //keep score and end game when 5 rounds up or one has 3 points
+        }
+        else if (roundResults === draw){
+            rounds++; 
+            resultsDiv.textContent = `between ${computerSelection} and ${playerSelection} is a draw!`;
+        }
     
-  
+   }
+   else if (rounds > 5 || !playing)
+   {
+    endGame(); 
+   } 
+}  
+
+
+function newGame()
+{
+    userScore = 0; 
+    compScore = 0; 
+    rounds = 0; 
+    playing = true; 
+}
+
+function endGame()
+{
+    playing = false; 
+    
+    if(compScore>userScore){
+        resultsDiv.textContent = `The computer has won! total rounds: ${rounds}`;
+    }
+    else if(compScore===userScore){
+        resultsDiv.textContent = `Looks like it was a draw! total rounds: ${rounds}`;
+    }
+    else{
+        resultsDiv.textContent = `You have won! total rounds: ${rounds}`;
+    }
+    // what round they were on
+    // update div to who was in the lead, try again prompt?
+}
+
+newGame();
 
 
