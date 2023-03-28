@@ -6,18 +6,22 @@
         
         </metadata>
         <head>
+            <link rel="stylesheet" href="./style.css">
             <script src="./script.js" defer></script>
         </head>
     </header>
     <body>
-
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-
+        <h1 id="title">Rock Paper Scissors</h1>
+        <div id="buttons">
+            <button class="gameBtn" id="rock">Rock</button>
+            <button class="gameBtn" id="paper">Paper</button>
+            <button class="gameBtn" id="scissors">Scissors</button>
+        </div>
         <div id="results">Results: </div>
-        <div id="c_score">Computer: </div>
-        <div id="player_score">Player: </div>
+        <div id="score">
+            <div class="scoreBox" id="c_score">Computer: </div>
+            <div class="scoreBox" id="player_score">Player: </div>
+        </div>
         <button id="pause">Pause</button>
     </body>
     
