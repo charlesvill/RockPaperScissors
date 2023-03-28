@@ -9,6 +9,7 @@ const scissorBtn = document.querySelector('#scissors');
 const resultsDiv = document.querySelector('#results');
 const cScoreDiv = document.querySelector('#c_score');
 const pScoreDiv = document.querySelector('#player_score');
+const pauseBtn = document.querySelector('#pause');
 
 cScoreDiv.textContent = `Computer: ${compScore}`; 
 pScoreDiv.textContent = `Player: ${userScore}`; 
@@ -16,7 +17,7 @@ pScoreDiv.textContent = `Player: ${userScore}`;
 rockBtn.addEventListener("click", () => game("rock"));
 paperBtn.addEventListener("click", () => game("paper"));
 scissorBtn.addEventListener("click", () => game("scissors"));
-
+pauseBtn.addEventListener("click", () => pauseGame());
 
 
 
@@ -153,6 +154,7 @@ function game(playerSelection)
    }
    else if (rounds > 5 || !playing)
    {
+    
     endGame(); 
    } 
 }  
@@ -170,6 +172,7 @@ function endGame()
 {
     playing = false; 
     
+    if (rounds > 5){rounds = 5;}
     if(compScore>userScore){
         resultsDiv.textContent = `The computer has won! total rounds: ${rounds}`;
     }
@@ -182,6 +185,22 @@ function endGame()
     // what round they were on
     // update div to who was in the lead, try again prompt?
 }
+
+function pauseGame()
+{
+    if (restartBtn===null){
+        const restartBtn = document.createElement("button");
+    restartBtn.innerHTML = "RESTART?"; 
+    document.body.appendChild(restartBtn); 
+    }
+    
+
+    
+    
+    restartBtn.addEventListener("click", ()=> newGame());
+}
+// at the moement this pause button does not work. 
+
 
 newGame();
 
