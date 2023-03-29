@@ -1,15 +1,15 @@
 body{
-display:flex;
-flex-direction: column;
-margin-top:10px;
-margin-bottom:10px;
-position:relative;
-background-image: url(./wideruled.jpeg);
-background-size: cover;
-z-index: 2;
-width: 1440px;
-max-width: 100%;
-height: auto;
+    display:flex;
+    flex-direction: column;
+    margin-top:10px;
+    margin-bottom:10px;
+    position:relative;
+    background-image: url(./pictures/wideruled.jpeg);
+    background-size: cover;
+    z-index: 2;
+    width: 1440px;
+    max-width: 100%;
+    height: auto;
 }
 
 h1{
@@ -34,29 +34,54 @@ h1{
 
 #resultsBox{
     align-self: center;
-    background-image: url(./Resultsbox.png);
-    background-size:cover;
-    width: 80%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-image: url(./pictures/Resultsbox.png);
+    background-size: cover;
+    width: 400px;
+    height: 350px;
+    
+    
+    margin: 15px, 20px;
+    
+    width: 95%;
     margin-bottom: 1em;
 }
 
 #results{
     text-align: center;
     height: 100px;
-    width: 100%;
+    width: 70%;
+    margin-left: 80px;
     background-image:url(./Resultsbox.png);
     padding: 1em;
 }
 
 #score{
     display: flex;
-
+    justify-content: space-between;
 }
 .scoreBox{
     margin: auto;
-    padding: 10px;
-    min-width: 50px;
-    min-height: 100px;
+    padding: 50px;
+    width: 150px;
+    height: 100px;
     
     
+}
+#c_score{
+    background-image: url(./pictures/sticky1.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+
+}
+
+#player_score{
+    background-image:url(./pictures/sticky2.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    margin-top: 0px;
+    justify-self: center;
 }
