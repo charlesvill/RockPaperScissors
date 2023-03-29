@@ -35,6 +35,7 @@ h1{
 #resultsBox{
     align-self: center;
     background-image: url(./Resultsbox.png);
+    background-size:cover;
     width: 80%;
     margin-bottom: 1em;
 }
