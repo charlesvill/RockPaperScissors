@@ -9,15 +9,15 @@ const scissorBtn = document.querySelector('#scissors');
 const resultsDiv = document.querySelector('#results');
 const cScoreDiv = document.querySelector('#c_score');
 const pScoreDiv = document.querySelector('#player_score');
-const pauseBtn = document.querySelector('#pause');
+const restartBtn = document.querySelector('#restart');
 
-cScoreDiv.textContent = `Computer: ${compScore}`; 
-pScoreDiv.textContent = `Player: ${userScore}`; 
+cScoreDiv.textContent = `${compScore}`; 
+pScoreDiv.textContent = `${userScore}`; 
 
 rockBtn.addEventListener("click", () => game("rock"));
 paperBtn.addEventListener("click", () => game("paper"));
 scissorBtn.addEventListener("click", () => game("scissors"));
-pauseBtn.addEventListener("click", () => pauseGame());
+restartBtn.addEventListener("click", () => reloadPage());
 
 
 
@@ -113,7 +113,7 @@ function game(playerSelection)
    {
     const playerWin = 'Player wins round';
     const compWin = 'Player loses round';
-    const draw = 'it\'s a draw!';
+    const draw = 'It\'s a draw!';
     
     //resultsDiv.textContent = "Results: "
     
@@ -125,7 +125,7 @@ function game(playerSelection)
             resultsDiv.textContent =  `${playerSelection} beats ${computerSelection} , you have won a round`;
             userScore++;
             rounds++; 
-            pScoreDiv.textContent = `Player: ${userScore}`;
+            pScoreDiv.textContent = `${userScore}`;
             if (userScore >= 3 ){
                 
                 endGame(); 
@@ -136,7 +136,7 @@ function game(playerSelection)
             resultsDiv.textContent = `${computerSelection} beats ${playerSelection} , you have lost this round.`;
             compScore++; 
             rounds++; 
-            cScoreDiv.textContent = `Computer: ${compScore}`;
+            cScoreDiv.textContent = `${compScore}`;
                 if(compScore >=3 ){
                 //endgame function where computer wins
                 
@@ -186,18 +186,9 @@ function endGame()
     // update div to who was in the lead, try again prompt?
 }
 
-function pauseGame()
+function reloadPage()
 {
-    if (restartBtn===null){
-        const restartBtn = document.createElement("button");
-    restartBtn.innerHTML = "RESTART?"; 
-    document.body.appendChild(restartBtn); 
-    }
-    
-
-    
-    
-    restartBtn.addEventListener("click", ()=> newGame());
+   window.location.reload();
 }
 // at the moement this pause button does not work. 
 

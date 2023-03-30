@@ -1,19 +1,16 @@
 body{
     display:flex;
     flex-direction: column;
-    margin-top:10px;
-    margin-bottom:10px;
-    position:relative;
+   font-family: ch;
     background-image: url(./pictures/wideruled.jpeg);
     background-size: cover;
-    z-index: 2;
-    width: 1440px;
-    max-width: 100%;
-    height: auto;
+  
 }
 
-h1{
+h3{
     align-self: center;
+    margin:0;
+    padding-left: 35px;
 }
 
 #buttons{
@@ -26,51 +23,95 @@ h1{
 }
 
 .gameBtn{
-    margin: 1em;
-    width: 25%;
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    border-style:none;
+    background-color:transparent;
 
+
+
+}
+.gameBtn:hover{
+    border-radius:9px;
+    transform: scale(1.05);
+}
+.gameBtn:active{
+    transform: scale(1);
+}
+
+#rock{
+    background-image: url(./pictures/rock.png);
+    
+}
+#paper{
+    background-image: url(./pictures/paper.png);
+    background-size: contain;
+    background-repeat:no-repeat;
+    width:60px;
+    height:100px;
+    justify-content: center;
+}
+#scissors{
+    background-image: url(./pictures/scissors.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height:80px;
+    
 }
 
 #resultsBox{
     align-self: center;
-    display: flex;
-    justify-items: center;
+    display: inline-flex;
+    justify-self: center;
     align-items: center;
     background-image: url(./pictures/Resultsbox.png);
     background-size: contain;
-    background-repeat: no-repeat;
-    width: 500px;
-    height: 300px;
-    min-width: none;
-    min-height: auto;
+    background-repeat:no-repeat;
+
     
-    margin: 15px, 20px;
-    
-    
-    margin-bottom: 1em;
+   
 }
 
 #results{
-    text-align: center;
-    height: 100px;
-    width: 70%;
-    margin-left: 80px;
     
+   
+    font-size: smaller;
+    text-align: center;
+   width: 200px;
+   height:100px;
+   max-width: 400px;
+   max-height: 200px;
+    margin-bottom:1em;
     padding: 1em;
+    padding-left:10px;
+    padding-right:10px;
 }
+
+
 
 #score{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .scoreBox{
     margin: auto;
-    padding: 50px;
-    width: 150px;
-    height: 100px;
+    padding: 1.5em;
+    width: 50px;
+    height: 40px;
+    font-size: smaller;
+    text-align: center;
     
     
+}
+.scoreBoxText{
+    text-align: center;
+
 }
 #c_score{
     background-image: url(./pictures/sticky1.png);
@@ -83,9 +124,34 @@ h1{
     background-image:url(./pictures/sticky2.png);
     background-size:contain;
     background-repeat: no-repeat;
-    padding-top: 20px;
-    margin-top: 0px;
     justify-self: center;
-    height: 125px;
-    width: 100px;
+    width: 60px;
+    height: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    
+    
+}
+#gameContainer{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:500px;
+    position: relative;
+}
+
+#restart{
+    align-self: center;
+    border-radius: 10px;
+    width: 20%;
+    background-color: whitesmoke;
+    border-style: none;
+}
+#restart:hover{
+    font-size: large;
+    
+}
+#restart:active{
+    font-size:small;
 }
