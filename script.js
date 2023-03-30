@@ -146,9 +146,9 @@ function game(playerSelection)
             
              //keep score and end game when 5 rounds up or one has 3 points
         }
-        else if (roundResults === draw){
+        else {
             rounds++; 
-            resultsDiv.textContent = `between ${computerSelection} and ${playerSelection} is a draw!`;
+            resultsDiv.textContent = `Between ${computerSelection} and ${playerSelection} is a draw!`;
         }
     
    }
